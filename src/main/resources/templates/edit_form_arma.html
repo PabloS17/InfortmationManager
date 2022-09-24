@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="utf-8">
+<title>Edit Arma</title>
+</head>
+<body style = "background-image: url('https://cdn2.unrealengine.com/fortnite-chapter-3-season-4-battle-pass-promo-footer-bg-desktop-1920x1228-6cbb08bfb7a1.png'); background-size: contain">
+<div align="center">
+	<h1 style="color:white; background:#000;">Edit Arma</h1>
+	<br/>
+	
+	<form action="#" th:action="@{/updateArma}" th:object="${arma}" method="post">
+			<table border="1" cellpadding="10" bgcolor="white">
+				<tr>
+					<td>ID:</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly"></td>
+				</tr>
+				<tr>
+					<td>Tipo:</td>
+					<td><input type="text" th:field="*{tipo}"></td>
+				</tr>
+				<tr>
+					<td>Nombre:</td>
+					<td><input type="text" th:field="*{nombre}"></td>
+				</tr>
+				<tr>
+					<td>Rareza:</td>
+					<td><input type="text" th:field="*{rareza}"></td>
+				</tr>
+				<tr>
+					<td>Damage:</td>
+					<td><input type="text" th:field="*{damage}"></td>
+				</tr>
+				<tr>
+					<td>Cargador:</td>
+					<td><input type="text" th:field="*{cargador}"></td>
+				</tr>
+				<tr>
+					<td>Cadencia:</td>
+					<td><input type="text" th:field="*{cadencia}"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>	
+			</table>
+	</form>
+</div>
+
+</body>
+</html>

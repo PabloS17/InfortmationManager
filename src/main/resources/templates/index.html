@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="utf-8">
+<title>Infortmation Manager Application</title>
+</head>
+<body style = "background-image: url('https://cdn2.unrealengine.com/fortnite-chapter-3-season-4-battle-pass-promo-footer-bg-desktop-1920x1228-6cbb08bfb7a1.png'); background-size: contain">
+<div align="center">
+	<img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/05/24/15587174049430.jpg" alt="Flowers in Chania" width="460" height="345" style="display: block; margin-right: auto; margin-left: auto;">
+	<h1 style="color:white; background:#000;">Usuario Records</h1>
+	<a style="background: black; color: white" href="/new">Enter New Usuario</a>
+	<br/><br/>
+	<table border="1" cellpadding="10" bgcolor="white">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Password</th>
+				<th>Correo</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="usuario : ${listUsuario}">
+				<td th:text="${usuario.username}">Username</td>
+				<td th:text="${usuario.password}">Password</td>
+				<td th:text="${usuario.correo}">Correo</td>
+				<td>
+					<a th:href="@{'/edit/' + ${usuario.username}}">Edit</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/delete/' + ${usuario.username}}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br></br>
+	<br></br>
+	<img src="https://www.epicgames.com/fortnite/en-US/creative/docs/Images/playing-games-in-fortnite-creative/choose-creative-game-mode.png" alt="Flowers in Chania" width="460" height="345" style="display: block; margin-right: auto; margin-left: auto;">
+	<h1 style="color:white; background:#000;">Modo Records</h1>
+	<a style="background: black; color: white" href="/newModo">Enter New Modo</a>
+	<br/><br/>
+	<table border="1" cellpadding="10" bgcolor="white">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Cantidad de jugadores</th>
+				<th>Tipo</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="modo : ${listModo}">
+				<td th:text="${modo.id}">ID</td>
+				<td th:text="${modo.cantJugadores}">Cantidad de jugadores</td>
+				<td th:text="${modo.tipo}">Tipo</td>
+				<td>
+					<a th:href="@{'/editModo/' + ${modo.id}}">Edit</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/deleteModo/' + ${modo.id}}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br></br>
+	<br></br>
+	<img src="https://imageio.forbes.com/blogs-images/davidthier/files/2018/03/Screen-Shot-2018-03-31-at-5.28.52-PM.jpg?format=jpg&width=960" alt="Flowers in Chania" width="460" height="345" style="display: block; margin-right: auto; margin-left: auto;">
+	<h1 style="color:white; background:#000;">Lugar Records</h1>
+	<a style="background: black; color: white" href="/newLugar">Enter New Lugar</a>
+	<br/><br/>
+	<table border="1" cellpadding="10" bgcolor="white">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Tipo</th>
+				<th>Nombre</th>
+				<th>Popularidad</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="lugar : ${listLugar}">
+				<td th:text="${lugar.id}">ID</td>
+				<td th:text="${lugar.tipo}">Tipo</td>
+				<td th:text="${lugar.nombre}">Nombre</td>
+				<td th:text="${lugar.popularidad}">Popularidad</td>
+				<td>
+					<a th:href="@{'/editLugar/' + ${lugar.id}}">Edit</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/deleteLugar/' + ${lugar.id}}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br></br>
+	<br></br>
+	<img src="https://cdn.mos.cms.futurecdn.net/D2KV5iaAeNbkL4JSkAwQXJ.jpg" alt="Flowers in Chania" width="460" height="345" style="display: block; margin-right: auto; margin-left: auto;">
+	<h1 style="color:white; background:#000;">Cosmetico Records</h1>
+	<a style="background: black; color: white" href="/newCosmetico">Enter New Cosmetico</a>
+	<br/><br/>
+	<table border="1" cellpadding="10" bgcolor="white">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Tipo</th>
+				<th>Nombre</th>
+				<th>Rareza</th>
+				<th>Precio</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="cosmetico : ${listCosmetico}">
+				<td th:text="${cosmetico.id}">ID</td>
+				<td th:text="${cosmetico.tipo}">Tipo</td>
+				<td th:text="${cosmetico.nombre}">Nombre</td>
+				<td th:text="${cosmetico.rareza}">Rareza</td>
+				<td th:text="${cosmetico.precio}">Precio</td>
+				<td>
+					<a th:href="@{'/editCosmetico/' + ${cosmetico.id}}">Edit</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/deleteCosmetico/' + ${cosmetico.id}}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br></br>
+	<br></br>
+	<img src="https://static.invenglobal.com/upload/image/2022/03/21/i1647885515060829.png" alt="Flowers in Chania" width="460" height="345" style="display: block; margin-right: auto; margin-left: auto;">
+	<h1 style="color:white; background:#000;">Arma Records</h1>
+	<a style="background: black; color: white" href="/newArma">Enter New Arma</a>
+	<br/><br/>
+	<table border="1" cellpadding="10" bgcolor="white">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Tipo</th>
+				<th>Nombre</th>
+				<th>Rareza</th>
+				<th>Damage</th>
+				<th>Cargador</th>
+				<th>Cadencia</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="arma : ${listArma}">
+				<td th:text="${arma.id}">ID</td>
+				<td th:text="${arma.tipo}">Tipo</td>
+				<td th:text="${arma.nombre}">Nombre</td>
+				<td th:text="${arma.rareza}">Rareza</td>
+				<td th:text="${arma.damage}">Damage</td>
+				<td th:text="${arma.cargador}">Cargador</td>
+				<td th:text="${arma.cadencia}">Cadencia</td>
+				<td>
+					<a th:href="@{'/editArma/' + ${arma.id}}">Edit</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/deleteArma/' + ${arma.id}}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br></br>
+	<br></br>
+	<img src="https://i.ytimg.com/vi/c6D8v6DhKc4/hqdefault.jpg" alt="Flowers in Chania" width="460" height="345" style="display: block; margin-right: auto; margin-left: auto;">
+	<h1 style="color:white; background:#000;">Relacion Records</h1>
+	<a style="background: black; color: white" th:href="@{'/funcionRelacion/'}">Actualizar Relacion</a>
+	<br/><br/>
+	<table border="1" cellpadding="10" bgcolor="white">
+		<thead>
+		<tr>
+			<th>id_tipo</th>
+			<th>id_arma</th>
+		</tr>
+		</thead>
+
+		<tbody>
+		<tr th:each="relacion : ${listRelacion}">
+			<td th:text="${relacion.id_tipo}">id_tipo</td>
+			<td th:text="${relacion.id_arma}">id_arma</td>
+		</tr>
+		</tbody>
+	</table>
+
+</div>
+
+</body>
+</html>
